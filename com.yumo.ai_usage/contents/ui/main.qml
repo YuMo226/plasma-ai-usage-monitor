@@ -85,7 +85,10 @@ PlasmoidItem {
         d.loading = true;
         d.error = false;
         d.errorMsg = "";
-        dataSource.connectSource("python3 " + root.scriptPath);
+
+        var cmd = "python3 " + root.scriptPath;
+        dataSource.disconnectSource(cmd);
+        dataSource.connectSource(cmd);
     }
 
     compactRepresentation: Item {
