@@ -15,6 +15,7 @@ Item {
     property bool error: false
     property string errorMsg: ""
     property bool success: false
+    property string lastUpdated: ""
 
     signal refreshRequested()
 
@@ -236,7 +237,7 @@ Item {
                 spacing: 8
 
                 Text {
-                    text: "更新于 " + new Date().toLocaleTimeString(Qt.locale(), "HH:mm")
+                    text: "更新于 " + root.lastUpdated
                     color: Qt.rgba(1, 1, 1, 0.3)
                     font.pixelSize: 11
                     Layout.fillWidth: true

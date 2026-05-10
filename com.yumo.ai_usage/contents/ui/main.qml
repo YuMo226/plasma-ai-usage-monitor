@@ -21,6 +21,7 @@ PlasmoidItem {
     readonly property real limit: d.limit
     readonly property real usage: d.usage
     readonly property bool success: d.success
+    readonly property string lastUpdated: d.lastUpdated
 
     // Config
     readonly property string scriptPath: Qt.resolvedUrl("../get_ai_usage.py").toString().replace("file://", "")
@@ -35,6 +36,7 @@ PlasmoidItem {
         property real limit: 0
         property real usage: 0
         property bool success: false
+        property string lastUpdated: ""
     }
 
     Timer {
@@ -53,6 +55,7 @@ PlasmoidItem {
 
         onNewData: function(sourceName, data) {
             d.loading = false;
+            d.lastUpdated = new Date().toLocaleTimeString(Qt.locale(), "HH:mm");
 
             if (data["exit code"] !== 0) {
                 d.error = true;
@@ -116,6 +119,7 @@ PlasmoidItem {
         error: root.error
         errorMsg: root.errorMsg
         success: root.success
+        lastUpdated: root.lastUpdated
 
         onRefreshRequested: root.refresh()
     }
