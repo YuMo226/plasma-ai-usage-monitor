@@ -1,6 +1,6 @@
 # AI API 使用情况监控部件 (AI Usage Monitor)
 
-一个专为 KDE Plasma 6 设计的桌面部件（Plasmoid），用于实时监控各种 AI 服务提供商（如 OpenAI、DeepSeek 等）的余额和额度消耗情况。
+[English](README.md)
 
 ## 🌟 特性
 

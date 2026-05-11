@@ -1,5 +1,7 @@
 # AI API Balance Plasma Widget
 
+[简体中文](README_CN.md)
+
 ## Project Structure
 
 ```
